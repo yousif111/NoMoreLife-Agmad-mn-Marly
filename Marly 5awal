@@ -1,0 +1,14 @@
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+local Window = Library.CreateLib("NoMorelife", "DarkTheme")
+
+local Menu = Window:NewTab("NoMoreLife")
+local Section = Menu:NewSection("NoMoreLife")
+
+Section:NewButton("NoMoreLife Game Awe", "ButtonInfo", function()
+    local args = {
+        [1] = "check_can_spin"
+    }
+    
+    game:GetService("ReplicatedStorage").Remotes.To_Server.Handle_Initiate_S_:InvokeServer(unpack(args))
+    
+end)
